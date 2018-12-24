@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat | Home</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<style>
+
+</style>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript"  src="/js/axios.min.js"></script>
+
+
+<body>
+    <div class="container-fluid">
+        <div class=" user-list col-md-3 col-sm-3 col-xs-12 ">
+
+            
+                <div class="upload-photo">
+                        <img src="https://s3-ap-southeast-1.amazonaws.com/summed-s3-bucket/<%= img %>" alt="Avatar" class="avatar" style="width: 60px; height: 60px; margin-bottom: 10px;">
+                        <button id="choose" class="btn_choose"><i class="glyphicon glyphicon-picture"></i></button>
+                        <form action="/user/<%= id %>" enctype="multipart/form-data" method="POST" class="form-upload" style="float:right;">
+                         <input type="file" name="file" id="file"/>
+                         <input type="submit" value="add" class="btn btn-margin" class="submit_btn" />
+                        </form>
+                        
+                          </div>
+                          <div class="form-group ">
+                                <div class="inner-addon left-addon">
+                                        <i class="glyphicon glyphicon-search"></i>
+                          <input type="text" autocomplete="off" placeholder="Search...." class="form-control">
+                         </div>
+                          </div>
+                            <h4>Connected People</h4>
+            <div class="f-suggestion" id="f_suggestion">
+            
+            </div>
+
+                         
+        </div>
+    <div class="show-chat col-md-6 col-sm-6 col-xs-0">
+           
+                <ol id="messageDisplay">
+
+                </ol>
+                    <form id="formid" class="navbar-form" >
+               <input type="text" name="message" id="send-input" placeholder="Type to send msg......" autofocus autocomplete="off" />
+               <button id="send-btn">Send</button>
+               </form>
+        
+              <input type="text" value=" <%= username %> " id="h_user1" hidden>
+              <input type="text" value=" <%= img %> " id="h_user2" hidden>
+              
+    </div>
+
+    <div class="user-list col-md-3 col-lg-3 col-sm-3 col-xs-0">
+        <br>
+        <a href="/logout" style="text-decoration: none; ">logout</a>
+        <br>
+        
+        <br>
+        <h4>suggestions</h4>
+        <div class="f-suggestion" >
+          <% if(sug_users){ %>
+            <% for(var i = 0; i < sug_users.length; i++){ %>
+              <section class="sug-sec">
+                      <img src="https://s3-ap-southeast-1.amazonaws.com/summed-s3-bucket/<%= sug_users[i].profileimg %>" alt="Avatar" class="avatar">
+                      <span class="username" ><%= sug_users[i].username %></span>
+                      <a href="/summ_add/<%= sug_users[i].id %>"><button id="add"><i class="glyphicon glyphicon-plus"></i></button></a>
+                  </section>
+          <%  } %>
+          <%  } %>
+           
+        </div>
+      
+    </div>
+    </div>
+
+
+    <script type="text/template" id="message-template">
+      <ol style="margin-left: 200px;">
+         <img src="https://s3-ap-southeast-1.amazonaws.com/summed-s3-bucket/{{ profile}}" alt="Avatar" class="avatar">
+          <div class="from">{{from}}</div>
+          <div class="user-msg">{{message}}</div>
+      </ol>
+    </script>
+
+    <script type="text/x-ejs-template" id="ejsTemplate">
+        <% if(sum_users){ %>
+            <% for(var i = 0; i < sum_users.length; i++){ %>
+              <section class="sug-sec">
+                  <a href="/private_chat/<%= id %>.<%= sum_users[i].id %>" style="text-decoration: none">
+                      <img src="https://s3-ap-southeast-1.amazonaws.com/summed-s3-bucket/<%= sum_users[i].profileimg %>" alt="Avatar" class="avatar">
+                      <span class="username" ><%= sum_users[i].username %></span>
+
+                      <% if(msgs[i].isRead === false){ %>
+
+                        <span class="username" style="font-weight: 900; font-size: 15; color:black;"><%= msgs[i].msg %></span>
+
+                       
+                      <% } else{ %>
+                        <span class="username" style="font-size: 13;color: brown;"><%= msgs[i].msg %></span>
+                        <% } %>
+                        
+
+                      </a>
+                      <a href="/summ_remove/<%= sum_users[i].id %>"><button id="minus" ><i class="glyphicon glyphicon-minus"></i></button></a>
+                  </section>
+          <%  } %>
+          <%  } %>
+    </script>
+</body>
+<script>
+    document.getElementById('choose').addEventListener('click', function(){
+         document.getElementById('file').click();
+    });
+</script>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"  src="js/bootstrap.min.js"></script>
+<script type="text/javascript"  src="js/index.js"></script>
+<script type="text/javascript"  src="js/ejs.min.js"></script>
+<script type="text/javascript" src="js/mustache.js"></script>
+
+</html>

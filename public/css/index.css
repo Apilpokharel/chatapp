@@ -1,0 +1,237 @@
+
+
+ 	*{
+        margin: 0px;
+        padding: 0px;
+    }
+
+body{
+    background: #ddd;
+}
+
+
+.user-list{
+    background-color:rgb(253, 253, 253);
+    height:757px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-shadow:  0px 0px 4px 1px #888888;
+}
+
+#messageDisplay{
+    background-color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 650px;
+    padding: 20px;
+    
+}
+
+#send-input{ 
+  width: 75%;
+  margin-top: 665px;
+  padding: 13px;
+ height: 50px;
+  display: inline-block;
+  border: none;
+  background: #ddd;
+  box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+}
+
+#send-input:focus {
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    box-shadow: 3px 5px 5px rgba(0,0,0,0.2);
+}
+
+#search_user{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    display: inline-block;
+  border: none;
+   box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+   background: #fffefe;
+   border-radius: 5px;
+}
+
+
+#send-btn{
+    width: 20%;
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    padding: 14px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+#formid{
+    height: 50px;
+    margin-top: -650px;
+}
+
+.from{
+   font-size: 12px;
+   margin-top: 10px;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.user-msg{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+margin-bottom: 20px;
+padding: 4px;
+padding-left: 20px;
+padding-right: 20px;
+background-color: tomato;
+  border: 0.5px solid red;
+border-radius: 50px 20px;
+text-align: center;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #fffefe;
+letter-spacing: 1px;
+display: inline-block;
+word-break: break-all; 
+text-shadow: 2px 2px 4px #000000;
+
+}
+
+.upload-photo{
+    background-color: #fff;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+
+
+#file{
+    display: none;
+    margin-left: 120px;
+}
+
+.form-upload{
+    position: relative;
+}
+
+
+.f-suggestion{
+    padding: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+
+.hide-every{
+    display: none;
+}
+.inner-addon {
+    position: relative;
+  }
+  
+  /* style glyph */
+  .inner-addon .glyphicon {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+  }
+  
+  /* align glyph */
+  .left-addon .glyphicon  { left:  0px;}
+  .right-addon .glyphicon { right: 0px;}
+  
+  /* add padding  */
+  .left-addon input  { padding-left:  30px; }
+  .right-addon input { padding-right: 30px; }
+
+  
+  .sug-sec{
+      margin-bottom: 50px;
+      
+  }
+
+
+  .btn_choose {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 90px;
+}
+
+/* Darker background on mouse-over */
+.btn_choose:hover {
+    background-color: RoyalBlue;
+}
+   
+#add{
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 1px 4px;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#minus{
+    background-color: rgb(236, 20, 67);
+    border: none;
+    color: white;
+    padding: 1px 4px;
+    font-size: 11px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.username{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px;
+    top: 3px;
+}
+
+.submit_btn{
+    border-radius: 55%;
+     padding: 12px 16px;
+    font-size: 16px;
+}
+  @media(max-width: 820px){
+      .show-chat{
+          display: none;
+      }
+
+      .username{
+          display:block;
+      }
+      .btn_choose {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 10px 14px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 50%;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+
+    .submit_btn{
+        border-radius: 55%;
+         padding: 10px 14px;
+        font-size: 14px;
+        margin-left: 0px;
+         margin-bottom: -10px;
+    }
+  }

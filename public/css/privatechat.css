@@ -1,0 +1,140 @@
+
+
+
+	*{
+        margin: 0px;
+        padding: 0px;
+    }
+
+body{
+    background: #ddd;
+}
+
+
+#send-input{ 
+    width: 80%;
+    margin-top: 665px;
+    padding: 13px;
+   height: 50px;
+    display: inline-block;
+    border: none;
+    background: #fff;
+  }
+  
+  #send-input:focus {
+      background-color: rgb(255, 255, 255);
+      outline: none;
+      box-shadow: 3px 5px 5px rgba(0,0,0,0.2);
+  }
+
+  
+#send-btn{
+    width: 20%;
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    padding: 13px;
+    font-size: 17px;
+    display: none;
+    cursor: pointer;
+}
+
+#send-file{
+    font-size: 20px;
+    height: 48px;
+    width: 30px;
+
+}
+
+#messageDisplay{
+    background-color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 100px;
+    max-height: 650px;
+    padding: 20px;
+    
+}
+
+#formid{
+    height: 50px;
+    margin-top: -674px;
+    margin-left: -15px;
+}
+
+
+.from{
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
+ 
+ .user-msg{
+
+ font-size: 16px;
+
+ padding: 4px;
+ padding-left: 20px;
+ padding-right: 20px;
+ border-radius: 50px 20px;
+ max-width: 350px;
+ text-align: center;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ letter-spacing: 1px;
+ display: inline-block;
+ word-break: break-all; 
+ position: relative;
+ overflow: hidden;
+ cursor: pointer;
+ }
+
+
+ .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+
+
+.message-list-ol{
+    margin: 5px;
+    margin-top: 7px;
+    padding: 5px;
+}
+
+
+ .more-option input{
+ display: none;
+}
+
+.more-option div{
+    display: none;
+}
+
+
+.more-option div{
+    cursor: pointer;
+}
+
+.user-msg:hover + .more-option div, .more-option div:hover{
+   display: block;
+}
+ img:hover + p, .deletefile:hover{
+    display: block ;
+}
+
+video:hover + p, p:hover{
+    display: block ;
+}
+
+.deletefile{
+    display: none;
+    cursor: pointer;
+    background-color: #ddd;
+    margin-top: -33px;
+}
+div br {
+    display: inline;
+}

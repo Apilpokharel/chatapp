@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<style type="text/css">
+	#form{
+	
+    font-size: 26px;
+    color: black;
+
+	}
+
+
+</style>
+</head>
+<body >
+
+
+<div class="container">
+<div class="col-md-3">
+	<h3>
+<font color="blue">Registration Fourm</font>
+
+</h3>
+<form method="POST" action="/signup" >
+<div class="form-group">
+	
+<div>
+<label></label>
+	<input type="txt" name="username"  placeholder="Name" class="form-control" value="<%= body.username %>">
+	
+</div>
+<div>
+<label></label>
+	<input type="text" name="email" placeholder="@gmail.com" class="form-control" value="<%= body.email %>">
+	
+</div>
+<div>
+	<label></label>
+		<input type="text" name="phone" placeholder="cell No.." class="form-control" value="<%= body.phone %>">
+		
+	</div>
+<div>
+<label></label>
+	<input type="password" name="password" placeholder="Password" class="form-control" value="<%= body.password %>">
+	
+</div>
+<div>
+	<label></label>
+		<input type="password" name="confirm_password"  placeholder="Confirm-Password" class="form-control" >
+	</div>
+	
+
+</div>
+<input type="submit" name="submit" value="register" class="btn btn-primary" >
+</form>
+
+</div>
+<div class="col-md-5" style="margin-top: 70px;">
+		<% if(flash){ %>
+			<% for(var i = 0; i < flash.length; i++){ %>
+				<ul style="margin: 20px;">
+				 <font style="color: brown; background-color: white; padding: 5px; margin: 20px;
+				 font-size: 11px; "><%= flash[i] %></font>
+				</ul>
+				 <% } %>
+				<% } %>
+</div>
+</div>
+
+</body>
+<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+</html>
